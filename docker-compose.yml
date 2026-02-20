@@ -1,0 +1,42 @@
+# docker-compose.yml pour Network Quality Prediction API
+# Déploiement multi-conteneur
+
+version: '3.8'
+
+services:
+  # Service API Flask
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: network-quality-api
+    environment:
+      - FLASK_APP=run.py
+      - FLASK_ENV=production
+      - FLASK_HOST=0.0.0.0
+      - FLASK_PORT=5000
+      - SECRET_KEY=${SECRET_KEY:-change-me-in-production}
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./model:/app/model
+      - ./logs:/app/logs
+    networks:
+      - network-quality-net
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 5s
+
+networks:
+  network-quality-net:
+    driver: bridge
+
+# Utilisation:
+# docker-compose up -d          # Démarrer
+# docker-compose down           # Arrêter
+# docker-compose logs -f api    # Voir les logs
+# docker-compose ps             # État des conteneurs
