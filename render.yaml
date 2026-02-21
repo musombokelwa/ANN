@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: ann-network-prediction
+    runtime: docker
+    plan: free
+    region: ohio
+    envVars:
+      - key: FLASK_ENV
+        value: production
+      - key: FLASK_DEBUG
+        value: "False"
+      - key: PORT
+        value: 5000
