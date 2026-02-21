@@ -7,7 +7,7 @@ Werkzeug==3.1.0
 
 # Machine Learning & Data
 TensorFlow==2.13.0
-Keras==3.12.1
+keras==2.13.1
 scikit-learn==1.3.2
 numpy==1.24.3
 pandas==2.1.4
