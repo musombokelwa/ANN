@@ -1,7 +1,7 @@
 # Dockerfile pour Network Quality Prediction API
 # Déploiement avec Docker
 
-FROM python:3.10-slim
+FROM python:3.11-slim
 
 WORKDIR /app
 
@@ -16,6 +16,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
     libhdf5-dev \
     libopenblas-dev \
+    curl \
     && rm -rf /var/lib/apt/lists/*
 
 # Copier les requirements
@@ -42,10 +43,10 @@ HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
 
 # Lancer l'application avec Gunicorn
 CMD ["gunicorn", \
-     "--bind", "0.0.0.0:5000", \
-     "--workers", "4", \
-     "--worker-class", "sync", \
-     "--timeout", "60", \
-     "--access-logfile", "-", \
-     "--error-logfile", "-", \
-     "run:app"]
+    "--bind", "0.0.0.0:5000", \
+    "--workers", "4", \
+    "--worker-class", "sync", \
+    "--timeout", "60", \
+    "--access-logfile", "-", \
+    "--error-logfile", "-", \
+    "run:app"]
