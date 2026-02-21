@@ -1,0 +1,152 @@
+{
+  "info": {
+    "name": "Network Quality Prediction API",
+    "description": "Collection d'endpoints pour tester l'API de prédiction de qualité réseau",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/health",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["health"]
+        },
+        "description": "Vérifier que l'API fonctionne"
+      },
+      "response": []
+    },
+    {
+      "name": "Get API Schema",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/predict/schema",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["predict", "schema"]
+        },
+        "description": "Récupérer le schéma de l'API"
+      },
+      "response": []
+    },
+    {
+      "name": "Predict - Excellent Connection",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"Opérateur\": \"Orange\",\n  \"Quartier\": \"Centre\",\n  \"Type réseau\": \"5G\",\n  \"Download (Mbps)\": 200,\n  \"Upload (Mbps)\": 100,\n  \"Latence (ms)\": 5,\n  \"Jitter (ms)\": 1,\n  \"Loss (%)\": 0\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/predict",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["predict"]
+        },
+        "description": "Prédire une excellente connexion"
+      },
+      "response": []
+    },
+    {
+      "name": "Predict - Medium Connection",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"Opérateur\": \"Maroc Telecom\",\n  \"Quartier\": \"Tahrir\",\n  \"Type réseau\": \"4G\",\n  \"Download (Mbps)\": 50,\n  \"Upload (Mbps)\": 25,\n  \"Latence (ms)\": 30,\n  \"Jitter (ms)\": 5,\n  \"Loss (%)\": 1\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/predict",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["predict"]
+        },
+        "description": "Prédire une connexion moyenne"
+      },
+      "response": []
+    },
+    {
+      "name": "Predict - Poor Connection",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"Opérateur\": \"Vodafone\",\n  \"Quartier\": \"Souissi\",\n  \"Type réseau\": \"3G\",\n  \"Download (Mbps)\": 10,\n  \"Upload (Mbps)\": 5,\n  \"Latence (ms)\": 100,\n  \"Jitter (ms)\": 20,\n  \"Loss (%)\": 5\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/predict",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["predict"]
+        },
+        "description": "Prédire une mauvaise connexion"
+      },
+      "response": []
+    },
+    {
+      "name": "Predict - Custom Test",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"Opérateur\": \"Orange\",\n  \"Quartier\": \"Centre\",\n  \"Type réseau\": \"5G\",\n  \"Download (Mbps)\": 100,\n  \"Upload (Mbps)\": 50,\n  \"Latence (ms)\": 10,\n  \"Jitter (ms)\": 2,\n  \"Loss (%)\": 0.1\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/predict",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["predict"]
+        },
+        "description": "Prédire avec des données personnalisées"
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:5000",
+      "type": "string"
+    }
+  ]
+}

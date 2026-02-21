@@ -1,0 +1,48 @@
+# Dépendances Python pour Network Quality Prediction API
+
+# Framework Web
+Flask==3.1.3
+flask-cors==4.0.0
+Werkzeug==3.1.0
+
+# Machine Learning & Data
+TensorFlow==2.13.0
+Keras==3.13.2
+scikit-learn==1.8.0
+numpy==2.4.2
+pandas==3.0.1
+scipy==1.11.0
+
+# Data Processing
+scikit-learn==1.8.0
+joblib==1.5.3
+pickle-mixin==1.0.0
+
+# Serialization
+h5py==3.15.1
+PyYAML==6.0.1
+
+# Server & Deployment
+gunicorn==21.2.0
+python-dotenv==1.0.1
+waitress==2.1.2
+
+# Utilities
+requests==2.32.5
+click==8.3.1
+jinja2==3.1.6
+markupsafe==3.0.3
+itsdangerous==2.2.0
+
+# Testing & Development
+pytest==7.4.0
+pytest-flask==1.3.0
+black==23.0.0
+flake8==6.1.0
+
+# Optional: Cloud Deployment
+# render-deploy==0.1.0
+# railway-cli==1.0.0
+
+# Logs & Monitoring
+python-json-logger==2.0.7
