@@ -10,8 +10,9 @@ class Config:
     JSONIFY_PRETTYPRINT_REGULAR = True
     
     # Limits
-    MAX_CONTENT_LENGTH = 16 * 1024 * 1024  # 16MB max
-    JSON_MAXSIZE = 16 * 1024 * 1024  # 16MB JSON max
+    
+    MAX_CONTENT_LENGTH = 16 * 1024 * 1024  
+    JSON_MAXSIZE = 16 * 1024 * 1024
     
     # Sessions
     PERMANENT_SESSION_LIFETIME = timedelta(days=7)
