@@ -43,7 +43,7 @@ ANN_tensor/
 │
 ├── run.py                      #  Point d'entrée principal
 │
-├── config.py                   # ⚙️ Configuration Flask
+├── config.py                   # Configuration Flask
 │
 ├── requirements-api.txt        #  Dépendances Python
 │
@@ -55,7 +55,7 @@ ANN_tensor/
 │   ├── routes.py               #    Endpoints API
 │   └── services.py             #    Logique métier
 │
-├── model/                      # 🤖 Modèle ML
+├── model/                      # Modèle ML
 │   ├── modele_non_entraine.pkl #    Modèle Random Forest
 │   └── scaler.pkl              #    MinMaxScaler
 │
@@ -68,7 +68,7 @@ ANN_tensor/
 │   └── js/
 │       └── app.js              #    JavaScript interactif
 │
-├── test/                       # 🧪 Tests
+├── test/                       #  Tests
 │   └── test_api.py             #    Tests unitaires
 │
 ├── scripts/                    #  Utilitaires
@@ -290,7 +290,7 @@ docker-compose up -d
 - Throughput: ~10+ req/sec (machine locale)
 - Mémoire: ~500MB-1GB (modèle inclus)
 
-## 🧪 Tests
+## Tests
 
 ### Tests Unitaires
 ```bash
@@ -356,10 +356,10 @@ CORS(app)  # Accepte toutes les origines
 ##  Sécurité
 
 ### Implémentée
-- ✅ Input validation
-- ✅ CORS configuration
-- ✅ Error handling sans leaks
-- ✅ SECRET_KEY pour sessions
+- Input validation
+- CORS configuration
+- Error handling sans leaks
+- SECRET_KEY pour sessions
 
 ### À considérer pour prod
 -  Rate limiting
