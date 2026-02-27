@@ -1,6 +1,5 @@
-"""
-Tests unitaires pour l'API de prédiction
-"""
+#Tests unitaires pour l'API de prédiction
+
 
 import pytest
 import json
