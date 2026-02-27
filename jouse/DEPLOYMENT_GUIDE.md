@@ -191,19 +191,6 @@ https://yourusername.pythonanywhere.com
 ### Coûts
 - Dynos: À partir de $7/mois
 
----
-
-##  Comparaison des Plateformes
-
-| Plateforme | Gratuit | Setup | Performance | Support |
-|-----------|---------|-------|-------------|---------|
-| Render | ✅ (limité) | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐⭐ |
-| Railway | ✅ ($5 crédit) | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐⭐ |
-| PythonAnywhere | ✅ (limité) | ⭐⭐⭐ | ⭐⭐⭐ | ⭐⭐⭐ |
-| Heroku | ❌ | ⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ |
-
----
-
 ##  Sécurité en Production
 
 Avant de déployer, assurez-vous:
