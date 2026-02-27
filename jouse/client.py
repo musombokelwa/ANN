@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+
 """
 Client Python pour tester l'API de prédiction de qualité réseau
 Peut être utilisé comme module ou script autonome
