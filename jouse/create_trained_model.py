@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+
 """
 Script pour créer un modèle entraîné de test
 """
