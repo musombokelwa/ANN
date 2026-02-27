@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 """
 Script de validation du projet
 Vérifie que tous les fichiers et dossiers nécessaires sont présents
@@ -54,9 +53,9 @@ class ProjectValidator:
         for file in critical_files:
             file_path = self.project_root / file
             if file_path.exists():
-                self.success.append(f"✅ {file}")
+                self.success.append(f"{file}")
             else:
-                self.errors.append(f"❌ {file} - MANQUANT")
+                self.errors.append(f" {file} - MANQUANT")
     
     def _check_directories(self):
         """Vérifier les dossiers"""
@@ -74,9 +73,9 @@ class ProjectValidator:
         for dir_name in required_dirs:
             dir_path = self.project_root / dir_name
             if dir_path.exists() and dir_path.is_dir():
-                self.success.append(f"✅ {dir_name}/")
+                self.success.append(f" {dir_name}/")
             else:
-                self.errors.append(f"❌ {dir_name}/ - MANQUANT")
+                self.errors.append(f" {dir_name}/ - MANQUANT")
     
     def _check_model_files(self):
         """Vérifier les fichiers du modèle"""
@@ -91,36 +90,36 @@ class ProjectValidator:
             file_path = self.project_root / file
             if file_path.exists():
                 size_mb = file_path.stat().st_size / (1024*1024)
-                self.success.append(f"✅ {file} ({size_mb:.2f} MB)")
+                self.success.append(f"{file} ({size_mb:.2f} MB)")
             else:
-                self.errors.append(f"❌ {file} - MANQUANT")
+                self.errors.append(f"{file} - MANQUANT")
     
-    def _print_results(self):
+    def _print_results(self):  
         """Afficher les résultats de la validation"""
         print("\n" + "="*60)
         print(" Résultats de la Validation")
         print("="*60 + "\n")
         
         if self.success:
-            print("✅ Fichiers trouvés:")
+            print("Fichiers trouvés:")
             for item in self.success:
                 print(f"   {item}")
         
         if self.warnings:
-            print("\n⚠️  Avertissements:")
+            print("\n Avertissements:")
             for item in self.warnings:
                 print(f"   {item}")
         
         if self.errors:
-            print("\n❌ Erreurs:")
+            print("\n  Erreurs:")
             for item in self.errors:
                 print(f"   {item}")
         
         print("\n" + "="*60)
         if not self.errors:
-            print("✅ VALIDATION RÉUSSIE - Projet prêt à démarrer!")
+            print(" VALIDATION RÉUSSIE - Projet prêt à démarrer!")
         else:
-            print(f"❌ VALIDATION ÉCHOUÉE - {len(self.errors)} erreur(s) détectée(s)")
+            print(f"  VALIDATION ÉCHOUÉE - {len(self.errors)} erreur(s) détectée(s)")
         print("="*60 + "\n")
     
     def check_python_version(self):
@@ -129,10 +128,10 @@ class ProjectValidator:
         
         version = sys.version_info
         if version.major >= 3 and version.minor >= 8:
-            self.success.append(f"✅ Python {version.major}.{version.minor}.{version.micro}")
-            return True
+            self.success.append(f"Python {version.major}.{version.minor}.{version.micro}")
+            return True 
         else:
-            self.errors.append(f"❌ Python {version.major}.{version.minor} - Minimum requis: 3.8")
+            self.errors.append(f"Python {version.major}.{version.minor} - Minimum requis: 3.8")
             return False
     
     def check_dependencies(self):
@@ -153,9 +152,9 @@ class ProjectValidator:
         for package in required_packages:
             try:
                 __import__(package)
-                self.success.append(f"✅ {package}")
+                self.success.append(f"{package}")
             except ImportError:
-                self.warnings.append(f"⚠️  {package} - non installé")
+                self.warnings.append(f"{package} - non installé")
 
 
 def main():
