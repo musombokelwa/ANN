@@ -9,7 +9,7 @@ Werkzeug==3.1.0
 TensorFlow>=2.16.1
 keras>=3.0.0
 scikit-learn==1.8.0
-numpy==2.2.4
+numpy>=2.2.4
 pandas>=2.2.2
 scipy>=1.13.1
 
@@ -18,7 +18,7 @@ joblib==1.4.2
 pickle-mixin==1.0.0
 
 # Serialization
-h5py==3.10.0
+h5py>=3.11.0
 PyYAML==6.0.1
 
 # Server & Deployment
