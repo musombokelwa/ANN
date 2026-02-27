@@ -1,7 +1,4 @@
-#!/usr/bin/env python3
-"""
-Script pour créer un modèle entraîné de test
-"""
+#Script pour créer un modèle entraîné de test
 
 import os
 import joblib
@@ -10,7 +7,7 @@ import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.preprocessing import MinMaxScaler
 
-print("🤖 Création d'un modèle entraîné pour les tests...\n")
+print(" Création d'un modèle entraîné pour les tests...\n")
 
 # Créer des données d'entraînement simulées
 print(" Génération de données synthétiques...")
@@ -33,7 +30,7 @@ X = np.hstack([X_categorical, X_numeric]).astype('float32')
 y = np.array([i % 3 for i in range(n_samples)], dtype='int32')
 np.random.shuffle(y)
 
-print(f"✅ {n_samples} samples créés")
+print(f"{n_samples} samples créés")
 print(f"   Classes: Bonne={sum(y==0)}, Moyenne={sum(y==1)}, Mauvaise={sum(y==2)}\n")
 
 # Entraîner le modèle
@@ -46,13 +43,13 @@ model = RandomForestClassifier(
 )
 
 model.fit(X, y)
-print("✅ Modèle entraîné!\n")
+print("Modèle entraîné!\n")
 
 # Créer et entraîner le scaler
 print(" Création du Scaler...")
 scaler = MinMaxScaler()
 scaler.fit(X[:, 3:8])  # Normaliser les colonnes numériques (indices 3-8)
-print("✅ Scaler créé!\n")
+print("Scaler créé!\n")
 
 # Sauvegarder
 model_path = 'model/modele_non_entraine.pkl'
@@ -60,13 +57,13 @@ scaler_path = 'model/scaler.pkl'
 
 print(" Sauvegarde des fichiers...")
 joblib.dump(model, model_path)
-print(f"   ✅ {model_path}")
+print(f"{model_path}")
 
 joblib.dump(scaler, scaler_path)
-print(f"   ✅ {scaler_path}\n")
+print(f"{scaler_path}\n")
 
 # Test rapide
-print("🧪 Test du modèle...")
+print("Test du modèle...")
 # 3 catégories (Opérateur, Quartier, Type réseau) + 5 numériques (Download, Upload, Latence, Jitter, Loss)
 test_data = np.array([
     [10, 20, 100, 50, 10, 2, 0.1, 5]  # 8 colonnes totales
@@ -89,4 +86,4 @@ predicted_class = prediction[0]
 
 print(f"   Prédiction: {classes[predicted_class]}")
 print(f"   Probabilités: Bonne={proba[0][0]:.2%}, Moyenne={proba[0][1]:.2%}, Mauvaise={proba[0][2]:.2%}")
-print("\n✅ Modèle prêt à l'emploi!")
+print("\n Modèle prêt à l'emploi!")
