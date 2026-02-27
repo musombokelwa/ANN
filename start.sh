@@ -1,4 +1,3 @@
-#!/bin/bash
 # Script de démarrage rapide pour l'API Flask
 
 set -e
