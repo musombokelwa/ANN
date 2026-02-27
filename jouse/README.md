@@ -260,7 +260,7 @@ print(json.dumps(result, indent=2))
 }
 ```
 
-**Résultat attendu:** Bonne ✅
+**Résultat attendu:** Bonne 
 
 ### Exemple 2: Connexion Moyenne
 ```json
@@ -276,7 +276,7 @@ print(json.dumps(result, indent=2))
 }
 ```
 
-**Résultat attendu:** Moyenne ⚠️
+**Résultat attendu:** Moyenne 
 
 ### Exemple 3: Mauvaise Connexion
 ```json
@@ -292,7 +292,7 @@ print(json.dumps(result, indent=2))
 }
 ```
 
-**Résultat attendu:** Mauvaise ❌
+**Résultat attendu:** Mauvaise 
 
 ##  Déploiement
 
@@ -372,7 +372,7 @@ Développé en 2026
 ---
 
 **Besoin d'aide?** Vérifiez que:
-- ✅ Python 3.8+ est installé
-- ✅ Les dépendances sont installées
-- ✅ Le modèle et le scaler existent dans le dossier `model/`
-- ✅ Le port 5000 n'est pas bloqué/utilisé
+- Python 3.8+ est installé
+- Les dépendances sont installées
+- Le modèle et le scaler existent dans le dossier `model/`
+-  Le port 5000 n'est pas bloqué/utilisé
